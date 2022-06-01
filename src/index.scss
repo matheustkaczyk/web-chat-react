@@ -9,6 +9,8 @@
 }
 
 header {
+  background-color: #001733;
+  color: white;
   height: 10vh;
 }
 
@@ -17,20 +19,29 @@ main {
   flex-direction: column;
   justify-content: space-between;
   height: 90vh;
+  background-color: #001C40;
+
+  li {
+    color: white;
+  }
 
   form {
     display: flex;
     flex-direction: row;
-    background-color: grey;
     padding: .5%;
+    background-color: #001733;
 
     input {
       width: 90%;
       padding: 1%;
+      border-radius: 5px;
     }
 
     button {
       width: 10%;
+      background-color: #0E639C;
+      border-radius: 5px;
+      color: white;
     }
   }
 }
