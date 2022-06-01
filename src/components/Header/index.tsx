@@ -1,7 +1,9 @@
+import chatSvg from '../../images/chat.svg';
+
 const Header = () => {
   return(
     <header>
-      <h1>Web-chat</h1>
+      <img src={chatSvg} alt="Chat icon" />
     </header>
   )
 }
