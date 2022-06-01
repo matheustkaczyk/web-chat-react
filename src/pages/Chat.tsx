@@ -8,8 +8,18 @@ import socket from '../service/socket';
 
 const Chat = () => {
   const [message, setMessage] = useState('');
+  const [username, setUsername] = useState('');
 
   useEffect(() => {
+    const username = localStorage.getItem('username');
+
+    if (username) {
+      setUsername(username);
+    } else {
+      localStorage.setItem('username', 'Anonymous');
+      setUsername('Anonymous');
+    }
+
     socket.on('message', (msg: string) => {
       const list = document.getElementById('list_element') as Element;
       const li = document.createElement('li');
@@ -23,7 +33,7 @@ const Chat = () => {
   }
 
   const handleClick = () => {
-    socket.emit('userMessage', message);
+    socket.emit('userMessage', { message, username });
     setMessage('');
   }
 
@@ -31,7 +41,7 @@ const Chat = () => {
     <>
     <Header />
     <main>
-      <ul id='list_element'></ul>
+      <ul id='list_element'/>
       <form>
         <Input type="text" placeholder='Digite uma mensagem' onChange={(e) => handleInput(e)} value={message}  />
         <Button text='Enviar' type="button" onClick={() => handleClick()} />
