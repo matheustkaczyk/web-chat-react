@@ -12,17 +12,31 @@ header {
   background-color: #001733;
   color: white;
   height: 10vh;
+  padding: 1rem;
 }
 
 main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 90vh;
+  height: 85vh;
   background-color: #001C40;
 
-  li {
-    color: white;
+  ul {
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    text-decoration: none;
+    list-style: none;
+    
+    li {
+      color: black;
+      background-color: white;
+      margin: 1%;
+      border-radius: 5px;
+      padding: .5%;
+      overflow-wrap: break-word;
+    }
   }
 
   form {
@@ -30,6 +44,8 @@ main {
     flex-direction: row;
     padding: .5%;
     background-color: #001733;
+    padding-bottom: 1%;
+    height: 10vh;
 
     input {
       width: 90%;
