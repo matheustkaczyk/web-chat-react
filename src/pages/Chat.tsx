@@ -1,4 +1,4 @@
-import { ChangeEvent, useState, useEffect } from 'react';
+import { ChangeEvent, useState, useEffect, FormEvent } from 'react';
 import Button from '../components/Button';
 
 import Header from '../components/Header';
@@ -37,12 +37,17 @@ const Chat = () => {
     setMessage('');
   }
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    return handleClick();
+  }
+
   return (
     <>
     <Header />
     <main>
       <ul id='list_element'/>
-      <form>
+      <form onSubmit={(e) => handleSubmit(e)}>
         <Input type="text" placeholder='Digite uma mensagem' onChange={(e) => handleInput(e)} value={message}  />
         <Button text='Enviar' type="button" onClick={() => handleClick()} />
       </form>
