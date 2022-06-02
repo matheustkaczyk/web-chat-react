@@ -34,14 +34,14 @@ const Chat = () => {
     setMessage(e.target.value);
   }
 
-  const handleClick = () => {
+  const handleButton = () => {
     socket.emit('userMessage', { message, username });
     setMessage('');
   }
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    return handleClick();
+    return handleButton();
   }
 
   return (
@@ -52,7 +52,7 @@ const Chat = () => {
       <ul id='list_element'/>
       <form onSubmit={(e) => handleSubmit(e)}>
         <Input type="text" placeholder='Digite uma mensagem' onChange={(e) => handleInput(e)} value={message}  />
-        <Button text='Enviar' type="button" onClick={() => handleClick()} />
+        <Button text='Enviar' type="button" onClick={() => handleButton()} />
       </form>
     </main>
     </>
