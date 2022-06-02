@@ -44,10 +44,14 @@ const Chat = () => {
     return handleButton();
   }
 
+  const handleSelect = () => {
+
+  }
+
   return (
     <>
     <Header isOpen={isOpen} setIsOpen={setIsOpen} />
-    <SideBar username={username} />
+    <SideBar username={username} handleChange={handleSelect} />
     <main>
       <ul id='list_element'/>
       <form onSubmit={(e) => handleSubmit(e)}>

@@ -1,10 +1,10 @@
 import ISelect from "./select.interface";
 
-const Select = ({ label, handleChange, options }: ISelect) => {
+const Select = ({ label, handleChange, options, id }: ISelect) => {
   return(
-    <label >
+    <label htmlFor={id}>
       {label}
-      <select onChange={(e) => handleChange(e)}>
+      <select id={id} onChange={(e) => handleChange(e)}>
         {options.map((option, index) => (
           <option key={index} value={option}>{option}</option>
         ))}
