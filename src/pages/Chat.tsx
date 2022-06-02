@@ -3,12 +3,14 @@ import Button from '../components/Button';
 
 import Header from '../components/Header';
 import Input from '../components/Input';
+import SideBar from '../components/NavBar';
 
 import socket from '../service/socket';
 
 const Chat = () => {
   const [message, setMessage] = useState('');
   const [username, setUsername] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const username = localStorage.getItem('username');
@@ -44,7 +46,8 @@ const Chat = () => {
 
   return (
     <>
-    <Header />
+    <Header isOpen={isOpen} setIsOpen={setIsOpen} />
+    <SideBar username={username} />
     <main>
       <ul id='list_element'/>
       <form onSubmit={(e) => handleSubmit(e)}>

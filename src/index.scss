@@ -23,6 +23,24 @@ header {
   }
 }
 
+nav {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 20vw;
+  position: fixed;
+  z-index: 1000;
+  right: 0;
+  text-align: center;
+  color: white;
+  padding: .5%;
+  transition: ease-in-out .5s;
+  transform: translateX(+100%);
+}
+
+.open-nav {
+  transform: unset;
+}
+
 main {
   display: flex;
   flex-direction: column;
