@@ -49,7 +49,7 @@ const Chat = () => {
 
   const handleSelect = (e: FormEvent<HTMLSelectElement>) => {
     setRoom((e.target as HTMLSelectElement).value);
-    socket.emit('room', room);
+    socket.emit('room', (e.target as HTMLSelectElement).value);
   }
 
   return (

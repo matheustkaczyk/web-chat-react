@@ -7,7 +7,7 @@ const NavBar = ({ username, handleChange }: INavBar) => {
     <nav>
       <h3>{username}</h3>
       <div>
-        <Select label="Escolha uma sala" handleChange={(e) => handleChange(e)} options={Options} id="category" />
+        <Select label="Escolha uma sala" handleChange={handleChange} options={Options} id="category" />
       </div>
     </nav>
   )
