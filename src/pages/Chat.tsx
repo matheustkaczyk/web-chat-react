@@ -82,7 +82,7 @@ const Chat = () => {
   return (
     <>
     <Header handleSideBar={handleSideBar} />
-    <SideBar username={username} handleChange={handleSelect} handleSideBar={handleSideBar} />
+    <SideBar username={username} setUsername={setUsername} handleChange={handleSelect} handleSideBar={handleSideBar} />
     <main>
       <ul id='list_element'/>
       <form onSubmit={(e) => handleSubmit(e)}>
