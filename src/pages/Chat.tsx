@@ -39,7 +39,7 @@ const Chat = () => {
 
   const handleButton = () => {
     const list = document.getElementById('list_element') as Element;
-    
+
     list.scrollTop = list.scrollHeight;
     socket.emit('userMessage', { message, username, room });
     setMessage('');
@@ -55,20 +55,22 @@ const Chat = () => {
     socket.emit('room', (e.target as HTMLSelectElement).value);
   };
 
-  const handleLeave = () => {
-    // if (isOpen === false) {
-    //   nav.classList.add('open-nav');
-    //   setIsOpen(true);
-    // } else {
-    //   nav.classList.remove('open-nav');
-    //   setIsOpen(false);
-    // }
-  };
+  const handleSideBar = () => {
+    const nav = document.getElementsByTagName('nav')[0] as Element;
+
+    if (isOpen === false) {
+      nav.classList.add('open-nav');
+      setIsOpen(true);
+    } else {
+      nav.classList.remove('open-nav');
+      setIsOpen(false);
+    }
+  }
 
   return (
     <>
-    <Header isOpen={isOpen} setIsOpen={setIsOpen} />
-    <SideBar username={username} handleChange={handleSelect} handleLeave={handleLeave} />
+    <Header isOpen={isOpen} setIsOpen={setIsOpen} handleSideBar={handleSideBar} />
+    <SideBar username={username} handleChange={handleSelect} handleSideBar={handleSideBar} />
     <main>
       <ul id='list_element'/>
       <form onSubmit={(e) => handleSubmit(e)}>
