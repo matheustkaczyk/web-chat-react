@@ -10,6 +10,7 @@ import socket from '../service/socket';
 const Chat = () => {
   const [message, setMessage] = useState('');
   const [username, setUsername] = useState('');
+  const [room, setRoom] = useState('Geral');
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -21,6 +22,8 @@ const Chat = () => {
       localStorage.setItem('username', 'Anonymous');
       setUsername('Anonymous');
     }
+
+    socket.emit('room', room);
 
     socket.on('message', (msg: string) => {
       const list = document.getElementById('list_element') as Element;
@@ -35,7 +38,7 @@ const Chat = () => {
   }
 
   const handleButton = () => {
-    socket.emit('userMessage', { message, username });
+    socket.emit('userMessage', { message, username, room });
     setMessage('');
   }
 
@@ -44,8 +47,9 @@ const Chat = () => {
     return handleButton();
   }
 
-  const handleSelect = () => {
-
+  const handleSelect = (e: FormEvent<HTMLSelectElement>) => {
+    setRoom((e.target as HTMLSelectElement).value);
+    socket.emit('room', room);
   }
 
   return (
