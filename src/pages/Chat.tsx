@@ -55,11 +55,14 @@ const Chat = () => {
     if (isOpen) {
       handleSideBar();
     }
-    
+
     return handleButton();
   };
 
   const handleSelect = (e: FormEvent<HTMLSelectElement>) => {
+    const list = document.getElementById('list_element') as Element;
+    list.innerHTML = '';
+
     setRoom((e.target as HTMLSelectElement).value);
     socket.emit('room', (e.target as HTMLSelectElement).value);
   };
