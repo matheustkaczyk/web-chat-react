@@ -2,7 +2,7 @@ import chatSvg from '../../images/chat.svg';
 import gearSvg from '../../images/gear.svg';
 import IHeader from './header.interface';
 
-const Header = ({ isOpen, setIsOpen, handleSideBar }: IHeader) => {
+const Header = ({ handleSideBar }: IHeader) => {
 
   return(
     <header>

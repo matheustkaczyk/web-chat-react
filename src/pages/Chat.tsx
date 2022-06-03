@@ -81,7 +81,7 @@ const Chat = () => {
 
   return (
     <>
-    <Header isOpen={isOpen} setIsOpen={setIsOpen} handleSideBar={handleSideBar} />
+    <Header handleSideBar={handleSideBar} />
     <SideBar username={username} handleChange={handleSelect} handleSideBar={handleSideBar} />
     <main>
       <ul id='list_element'/>
