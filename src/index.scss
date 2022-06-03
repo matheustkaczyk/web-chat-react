@@ -35,14 +35,20 @@ nav {
   position: fixed;
   z-index: 1000;
   right: 0;
+  top: 0;
   text-align: center;
   color: white;
   padding: .5%;
   transition: ease-in-out .5s;
   transform: translateX(+100%);
 
+  img {
+    width: 1rem;
+  }
+
   select {
     background-color: white;
+    margin-top: 10%;
 
     option {
       background-color: white;
