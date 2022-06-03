@@ -40,6 +40,10 @@ const Chat = () => {
   const handleButton = () => {
     const list = document.getElementById('list_element') as Element;
 
+    if (isOpen) {
+      handleSideBar();
+    }
+
     list.scrollTop = list.scrollHeight;
     socket.emit('userMessage', { message, username, room });
     setMessage('');
@@ -47,6 +51,11 @@ const Chat = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (isOpen) {
+      handleSideBar();
+    }
+    
     return handleButton();
   };
 
