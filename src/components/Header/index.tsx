@@ -6,7 +6,9 @@ const Header = ({ handleSideBar }: IHeader) => {
 
   return(
     <header>
-      <img src={chatSvg} alt="Chat icon" />
+      <a href='https://www.linkedin.com/in/matheustkaczykribeiro/' target='_blank'>
+        <img src={chatSvg} alt="Chat icon" />
+      </a>
       <img src={gearSvg} alt="Gear icon" onClick={() => handleSideBar()} />
     </header>
   )

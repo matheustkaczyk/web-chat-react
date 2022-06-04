@@ -16,6 +16,13 @@ header {
   width: auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  a {
+    width: 3rem;
+    margin: 1%;
+    cursor: pointer;
+  }
 
   img {
     width:3rem;
@@ -138,3 +145,5 @@ main {
     }
   }
 }
+
+
