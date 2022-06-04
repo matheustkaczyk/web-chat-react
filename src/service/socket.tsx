@@ -1,3 +1,3 @@
 import { io } from 'socket.io-client';
 
-export default io('http://localhost:3001', { transports: ['websocket', 'polling', 'flashsocket'] });
+export default io('https://webchatbackendtkaczyk.herokuapp.com/', { transports: ['websocket', 'polling', 'flashsocket'] });
