@@ -69,7 +69,7 @@ const Chat = () => {
 
   const handleSideBar = () => {
     const nav = document.getElementsByTagName('nav')[0] as Element;
-
+    
     if (isOpen === false) {
       nav.classList.add('open-nav');
       setIsOpen(true);

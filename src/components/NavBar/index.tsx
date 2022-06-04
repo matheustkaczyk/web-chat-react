@@ -15,7 +15,8 @@ const NavBar = ({ username, setUsername, handleChange, handleSideBar }: INavBar)
   }
 
   const handleNickname = () => {
-    localStorage.setItem('nickname', username);
+    localStorage.setItem('username', username);
+    setIsOpen(false);
   }
 
   return(
