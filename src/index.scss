@@ -146,4 +146,25 @@ main {
   }
 }
 
+@media (max-width: 500px) {
+  nav {
+    width: 30%;
+  }
+}
 
+@media (max-width: 454px) {
+    main {
+      form {
+        input {
+          width: 80%;
+        }
+        button {
+         width: 20%;
+        }
+      }
+    }
+
+    nav {
+      width: 50%;
+    }
+}
